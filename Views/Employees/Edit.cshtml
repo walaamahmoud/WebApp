@@ -1,0 +1,214 @@
+﻿
+@model WebApp.BL.Models.EmployeesVM
+@section Search
+{
+
+    <form class="form-inline my-2 my-lg-0 mr-lg-2">
+        <div class="input-group">
+            <input class="form-control" type="text" placeholder="Search for...">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
+        </div>
+    </form>
+}
+
+
+
+<div class="d-flex flex-column  align-items-center justify-content-center">
+    <h2 class="my-3 my-sm-5">Update employee data</h2>
+    <form class="form-group w-75 " asp-action="Edit" asp-controller="Employees">
+
+        <div class="form-group row">
+            <label asp-for="Name" class="col-sm-2 col-form-label font-weight-bold">Name</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="Name" class="form-control ">
+                <div class=" text-danger mt-2">
+                    <span asp-validation-for="Name" class="form-control-feedback"></span>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Age" class="col-sm-2 col-form-label font-weight-bold">Age</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="Age" class="form-control ">
+                <div class=" text-danger mt-2">
+                    <span asp-validation-for="Age" class="form-control-feedback"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Email" class="col-sm-2 col-form-label font-weight-bold">Email</label>
+            <div class="col-sm-10">
+                <input type="email" asp-for="Email" class="form-control ">
+                <div class=" text-danger mt-2">
+                    <span asp-validation-for="Email" class="form-control-feedback"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Address" class="col-sm-2 col-form-label font-weight-bold">Address</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="Address" class="form-control ">
+                <div class=" text-danger mt-2">
+                    <span asp-validation-for="Address" class="form-control-feedback"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Salary" class="col-sm-2 col-form-label font-weight-bold">Salary</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="Salary" class="form-control ">
+                <div class=" text-danger mt-2">
+                    <span asp-validation-for="Salary" class="form-control-feedback"></span>
+
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="DateOfHire" class="col-sm-2 col-form-label font-weight-bold">Hiring date</label>
+            <div class="col-sm-10">
+                <input type="date" asp-for="DateOfHire" class="form-control ">
+                <div class=" text-danger mt-2">
+                    <span asp-validation-for="DateOfHire" class="form-control-feedback"></span>
+
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Department.DepartmentName" class="col-sm-2 col-form-label font-weight-bold">Department</label>
+            <div class="col-sm-10">
+                <select class="form-control" asp-for="DepartmentId" asp-items="(SelectList)ViewBag.DepartmentsList">
+                    <option value="" disabled selected hidden> Choose a department</option>
+                </select>
+
+                <div class=" text-danger mt-2">
+                    <span asp-validation-for="DepartmentId" class="form-control-feedback"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label font-weight-bold">Country</label>
+            <div class="col-sm-10">
+                <select id="CountriesList" class="form-control" asp-items="(SelectList)ViewBag.CountriesList">
+
+                    <option value="" disabled selected hidden> Choose country</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label font-weight-bold">City</label>
+            <div class="col-sm-10">
+                <select id="CitiesList" class="form-control">
+
+                    <option value="" disabled selected hidden> Choose city</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Districts.Name" class="col-sm-2 col-form-label font-weight-bold">District</label>
+            <div class="col-sm-10">
+                <select id="DistrictsList" class="form-control" asp-for="DistrictId">
+
+                    <option value="" disabled selected hidden> Choose district</option>
+                </select>
+
+                <div class=" text-danger mt-2">
+                    <span asp-validation-for="DistrictId" class="form-control-feedback"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Notes" class="col-sm-2 col-form-label font-weight-bold">Notes</label>
+            <div class="col-sm-10">
+                <textarea type="text" asp-for="Notes" class="form-control "></textarea>
+                <div class=" text-danger mt-2">
+                    <span asp-validation-for="Notes" class="form-control-feedback"></span>
+
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 font-weight-bold">Active Status</label>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <label class="custom-control custom-checkbox" asp-for="IsActive">
+                        <input class="custom-control-input" type="checkbox" asp-for="IsActive">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">Active</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="float-right">
+            <input type="submit" value="Update" class="btn btn-primary">
+            <button asp-action="Index" asp-controller="Employees" class="btn btn-danger">Cancel</button>
+
+        </div>
+    </form>
+
+
+
+    @section Validation{
+        <script src="~/vendor/jquery-validate/jquery.validate.min.js"></script>
+        <script src="~/vendor/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+        <script>
+            $("#CountriesList").change(function () {
+                $("#CitiesList").empty();
+                $("#CitiesList").append("<option value='' disabled selected hidden> Choose city</option>");
+                $("#DistrictsList").empty();
+                $("#DistrictsList").append("<option value='' disabled selected hidden> Choose district</option>");
+  
+
+                var CountyId = $("#CountriesList option:selected").val();
+
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Employees/GetDataByCountryId",
+                    data: { CtryId: CountyId },
+                    success: function (res) {
+                        $.each(res, function (i, e) {
+                            $("#CitiesList").append("<option value='" + e.Id + "'>" + e.Name + "</option>");
+                        });
+                    }
+
+                });
+            });
+
+
+            $("#CitiesList").change(function () {
+                $("#DistrictsList").empty();
+                $("#DistrictsList").append("<option value='' disabled selected hidden> Choose district</option>");
+
+
+
+                var CityId = $("#CitiesList option:selected").val();
+
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Employees/GetDataByCityId",
+                    data: { CtyId: CityId },
+                    success: function (res) {
+                        $.each(res, function (i, e) {
+                            $("#DistrictsList").append("<option value='" + e.Id + "'>" + e.Name + "</option>");
+                           
+                        });
+                    }
+
+                });
+            });
+        </script>
+
+    }
+
+
+
+</div>

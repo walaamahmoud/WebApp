@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31105.61
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp.csproj", "{EEFF1489-19F8-43FD-92C4-448BD3EF874D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.DAL", "..\WebApp.DAL\WebApp.DAL.csproj", "{6AB58337-9D95-4BFB-8F08-26D7DF669D1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.BL", "..\WebApp.BL\WebApp.BL.csproj", "{2CD259E3-2AE0-4BBC-BB6F-85AF56060E95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEFF1489-19F8-43FD-92C4-448BD3EF874D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEFF1489-19F8-43FD-92C4-448BD3EF874D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEFF1489-19F8-43FD-92C4-448BD3EF874D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEFF1489-19F8-43FD-92C4-448BD3EF874D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AB58337-9D95-4BFB-8F08-26D7DF669D1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AB58337-9D95-4BFB-8F08-26D7DF669D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AB58337-9D95-4BFB-8F08-26D7DF669D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AB58337-9D95-4BFB-8F08-26D7DF669D1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CD259E3-2AE0-4BBC-BB6F-85AF56060E95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CD259E3-2AE0-4BBC-BB6F-85AF56060E95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CD259E3-2AE0-4BBC-BB6F-85AF56060E95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CD259E3-2AE0-4BBC-BB6F-85AF56060E95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B57942C-EFC7-40DC-9528-A04E959F62C6}
+	EndGlobalSection
+EndGlobal

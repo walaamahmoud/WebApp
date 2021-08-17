@@ -1,0 +1,121 @@
+﻿@model WebApp.BL.Models.EmployeesVM
+
+@section Search
+{
+
+    <form class="form-inline my-2 my-lg-0 mr-lg-2">
+        <div class="input-group">
+            <input class="form-control" type="text" placeholder="Search for...">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
+        </div>
+    </form>
+}
+
+<div class="d-flex flex-column  align-items-center justify-content-center">
+    <h2 class="my-3 my-sm-5">Employee details</h2>
+    <form class="form-group w-75" asp-action="Delete" asp-controller="Employees">
+
+        <div class="form-group row">
+            <label asp-for="Id" class="col-sm-2 col-form-label font-weight-bold">ID</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="Id" disabled class="form-control ">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Name" class="col-sm-2 col-form-label font-weight-bold">Password</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="Name" disabled class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Age" class="col-sm-2 col-form-label font-weight-bold">Age</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="Age" disabled class="form-control ">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Email" class="col-sm-2 col-form-label font-weight-bold">Email</label>
+            <div class="col-sm-10">
+                <input type="email" asp-for="Email" disabled class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Address" class="col-sm-2 col-form-label font-weight-bold">Address</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="Address" disabled class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Districts.Name" class="col-sm-2 col-form-label font-weight-bold">District</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="Districts.Name" disabled class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Salary" class="col-sm-2 col-form-label font-weight-bold">Salary</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="Salary" disabled class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="DateOfHire" class="col-sm-2 col-form-label font-weight-bold">Hiring date</label>
+            <div class="col-sm-10">
+                <input type="date" asp-for="DateOfHire" disabled class="form-control ">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Department.DepartmentName" class="col-sm-2 col-form-label font-weight-bold">Department</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="Department.DepartmentName" disabled class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Notes" class="col-sm-2 col-form-label font-weight-bold">Notes</label>
+            <div class="col-sm-10">
+                <textarea type="text" asp-for="Notes" disabled class="form-control"></textarea>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="col-sm-2 font-weight-bold">Active Status</label>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <label class="custom-control custom-checkbox" asp-for="IsActive">
+                        <input class="custom-control-input" type="checkbox" disabled asp-for="IsActive">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">Active</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="float-right">
+
+            <a asp-action="Edit" asp-controller="Employees" asp-route-id="@Model.Id" class="btn btn-warning text-white">Edit</a>
+            <a asp-action="Delete" asp-controller="Employees" asp-route-id="@Model.Id" class="btn btn-danger text-white">Delete</a>
+            <a asp-action="Index" asp-controller="Employees" class="btn btn-primary">Back To Employees</a>
+        </div>
+
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

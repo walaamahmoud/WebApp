@@ -1,0 +1,89 @@
+﻿@model IEnumerable<WebApp.BL.Models.EmployeesVM>
+
+
+@section Search
+{
+
+    <form class="form-inline my-2 my-lg-0 mr-lg-2" asp-action="Index" asp-controller="Employees">
+        <div class="input-group">
+            <input class="form-control" type="text" placeholder="Search for employee..." name="SearchValue">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
+        </div>
+    </form>
+}
+
+
+<div class="container-fluid">
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Tables / Employees table</li>
+    </ol>
+    <!-- Example DataTables Card-->
+    <div class="card mb-3">
+        <div class="card-header">
+         <i class="fa fa-table"></i> Employees table
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Salary</th>
+                            <th>Details</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Salary</th>
+                            <th>Details</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.Age</td>
+                            <td>@item.Email</td>
+                            <td>@item.Address</td>
+                            <td>@item.Salary</td>
+                            <td><a asp-action="Details" asp-controller="Employees"  asp-route-id="@item.Id" class="btn btn-primary">Details</a></td>
+                            <td><a asp-action="Edit" asp-controller="Employees" asp-route-id="@item.Id" class="btn btn-warning text-white">Edit</a></td>
+                            <td><a asp-action="Delete" asp-controller="Employees" asp-route-id="@item.Id" class="btn btn-danger text-white">Delete</a></td>
+
+                        </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        <div class="card-footer">
+         
+            <a asp-action="Create" asp-controller="Employees" class=" btn btn-primary float-right">Add employee</a>
+
+        </div>
+        </div>
+    </div>
+
